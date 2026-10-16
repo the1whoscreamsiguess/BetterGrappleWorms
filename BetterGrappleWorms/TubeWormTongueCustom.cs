@@ -43,7 +43,9 @@ namespace BetterGrappleWorms
                 ClimbableVinesSystem vinesSystem = self.room.climbableVines;
                 if (vinesSystem != null)
                 {
-                    float rad = 35f; //radius needs to be a little bit stupid or else it'll slip through gaps between the vine segments
+                    //look at this nonsense i had to do to try and make the collision detection more reliable. and it's still not 100%
+                    //i'm not in the mood to figure out how to make this reliable! anyone who is is welcome to hit me up and get it added to the mod
+                    float rad = 35f;
                     ClimbableVinesSystem.VinePosition vinePosition = vinesSystem.VineOverlap(self.pos, rad);
                     //If at first you don't succeed, do some intermediate steps
                     if (vinePosition == null)
